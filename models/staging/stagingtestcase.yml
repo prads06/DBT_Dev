@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: staging_products
+    description: master data
+    columns:
+      - name: productid
+        tests:
+          - unique
+          - not_null
+      - name: productname
+        tests:
+          - not_null
+  - name: staging_shipment
+    description: "{{doc('shipment')}}"
+    columns:
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['shipped','returned','ordered','replaced'] 
+
+  - name: staging_orderdtails
+    columns:
+      - name: orderid
+        tests:
+         - relationships:
+            to: ref('staging_order')
+            field: orderid
+
+  #- name: staging_customer
+  #  columns:
+  #    - name: customerid
+  #      tests:
+  #        - is_even
+
+  - name: staging_empl
+    columns:
+      - name: empid
+        tests:
+          - is_even
+
+
+
+          
