@@ -1,0 +1,11 @@
+version: 2
+
+
+models: 
+  - name: staging_customer
+    config:
+      schema: "{{env_var('DBT_STAGESCHEMA','STAGING_DEV')}}" 
+
+  - name: staging_order
+    config:
+      schema: "{{env_var('DBT_STAGESCHEMA','STAGING_DEV')}}" 

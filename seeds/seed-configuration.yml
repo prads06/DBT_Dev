@@ -1,0 +1,18 @@
+version: 2
+
+seeds:
+  - name: lookup_division
+    config:
+      schema: LKP_Data
+
+  - name: lookup_categories
+    config:
+      schema : LKP_Data
+
+  - name: lookup_s
+    config:
+      schema : LKP_Data
+
+  - name: lookup_o
+    config:
+      schema : LKP_Data

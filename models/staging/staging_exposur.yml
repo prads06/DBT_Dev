@@ -1,0 +1,17 @@
+version: 2
+
+exposures:
+  - name: qwt_sales_dash
+    type: dashboard
+    maturity: high
+    url: https://google.com
+    description: "sales dashboards"
+
+    depends_on:
+      - ref('fact_order')
+      - ref('customer_dim')
+    
+    owner:
+      name : a
+      mail : a@gmail.com
+    
